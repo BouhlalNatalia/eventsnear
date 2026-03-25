@@ -1,0 +1,1141 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+/* MAIN */
+.main {
+    max-width: 1512px;
+    margin: 0 auto;
+    padding: 71px 133px 64px 158px;
+}
+
+/* community */
+.community {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 46px;
+    padding: 0px 160px 0px 0px;
+}
+
+.people__platform {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.people__platform__title {
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 52px;
+    color: #212121;
+}
+
+.people__platform__text {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #212121;
+}
+
+.btn__people__platform {
+    background: #009ea6;
+    width: 125px;
+    height: 40px;
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+/* 1. Анимация (оставляем) */
+@keyframes simpleRide {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+
+.bike-container {
+    display: block;
+    width: 379px;
+    padding: 20px 0;
+    flex-shrink: 0;
+    animation: simpleRide 3s ease-in-out infinite;
+}
+
+
+.bike-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+}
+
+
+.bike-container:hover .bike-img {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+
+/* Events near и online events */
+.nav__events,
+.nav__events__online {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 24px 0;
+}
+
+.nav__events__left,
+.nav__events__left__online {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav__events h2,
+.nav__events__left__online h2 {
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 36px;
+}
+
+.nav__events a,
+.nav__events__online a {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 24px;
+    color: #0077cc;
+    text-decoration: none;
+}
+
+.nav__events__left__titele {
+    position: relative;
+    display: inline-block;
+}
+
+.nav__events__left__titele p {
+    width: 240px;
+    background-color: rgba(151, 202, 209, 0.12);
+    color: #00798A;
+    padding: 9px 40px 9px 12px;
+    border-radius: 8px;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24px;
+}
+
+.nav__events__left__titele img {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 22px;
+    height: 22px;
+}
+
+.event__cards,
+.event__cards__online {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 36px;
+}
+
+.event__card,
+.event__card__online {
+    display: flex;
+    flex-direction: column;
+    width: 272px;
+    height: 399px;
+    gap: 12px;
+    position: relative;
+    overflow: hidden;
+
+}
+
+.event__image img,
+.event__image__online img {
+    width: 272px;
+    height: 150px;
+    border-radius: 4px;
+    object-fit: cover;
+}
+
+.event__card:nth-child(3)::before,
+.event__card:nth-child(6)::before,
+.event__card__online::before {
+    content: url('../images/icons/online_event.svg');
+    position: absolute;
+    top: 6px;
+    left: 7px;
+    z-index: 10;
+}
+
+.event__content,
+.event__content__online {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.event__title,
+.event__title__online {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24px;
+}
+
+.event__category,
+.event__category__online {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    color: #707070;
+}
+
+.event__details,
+.event__details__online {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    color: #212121;
+}
+
+.event__info,
+.event__info__online {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.event__info__1,
+.event__info__1__online {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.event__info__1 p,
+.event__info__1__online p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.icon,
+.icon__online {
+    width: 20px;
+    height: 20px;
+}
+
+.cards__evets__adaptiv {
+    display: none;
+}
+
+/* join__Meetup */
+@keyframes handsBounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+/* 2. ОСНОВНОЙ БЛОК (Десктоп) */
+.join__Meetup {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 46px;
+    padding: 36px 56px;
+    border-radius: 8px;
+    background-color: rgba(151, 202, 209, 0.08);
+}
+
+.join__platform {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.join__platform__img {
+    width: 379px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+    animation: handsBounce 3s ease-in-out infinite;
+    will-change: transform;
+}
+
+.join__platform__img__media {
+    display: none;
+}
+
+.join__platform__title {
+    padding-top: 0;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 36px;
+    color: #212121;
+}
+
+.join__platform__text {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #212121;
+}
+
+.btn__join__platform {
+    background: #E32359;
+    width: 192px;
+    height: 40px;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn__join__platform:hover {
+    opacity: 0.8;
+}
+
+.top__categories__title,
+.getting__started__title,
+.friendships__title,
+.popular__cities__title {
+    padding-top: 64px;
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 36px;
+    color: #212121;
+}
+
+.category__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(138px, 1fr));
+    gap: 16px;
+}
+
+.category {
+    text-align: center;
+    padding: 22px 27px 16px 27px;
+    border-radius: 8px;
+    background: rgba(151, 202, 209, 0.08);
+}
+
+.category p {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    color: #212121;
+}
+
+.popular__cities__text {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #707070;
+    padding-top: 16px;
+    padding-bottom: 28px;
+}
+
+.popular__cities__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    align-items: center;
+    justify-content: space-between;
+    gap: 41px;
+}
+
+.cities {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 28px;
+    color: #212121;
+}
+
+.cities img {
+    border-radius: 50%;
+}
+
+/* How Meetup works */
+.getting__started__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    align-items: start;
+}
+
+.getting__started__action {
+    display: flex;
+    align-items: flex-start;
+    gap: 32px;
+    padding: 32px 112px 24px 24px;
+    background: rgba(151, 202, 209, 0.08);
+    margin-top: 24px;
+}
+
+.getting__started__left {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.getting__started__left img {
+    width: 41px;
+    height: 41px;
+}
+
+.getting__started__right {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.getting__started__right h4 {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24px;
+    color: #212121;
+}
+
+.getting__started__right p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #212121;
+}
+
+.getting__started__right a {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    color: #00798A;
+}
+
+/* friendships */
+.friendships__text {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #707070;
+    padding-top: 16px;
+    padding-bottom: 28px;
+}
+
+.friendships__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 32px;
+    justify-content: center;
+    padding: 0 16px;
+    margin: 0 auto;
+}
+
+.friendships__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.friendships__item__img img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.friendships__item h4 {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 28px;
+    color: #212121;
+    padding-top: 24px;
+}
+
+.friendships__item p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #707070;
+    padding-top: 12px;
+    padding-bottom: 16px;
+}
+
+.friendships__item a {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #00798A;
+}
+
+/* image hover */
+.image-hover {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.image-hover:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+@media (max-width: 1440px) {
+    .main {
+        max-width: 1440px;
+        padding: 64px 120px 64px;
+        margin: 0 auto;
+    }
+
+    .popular__cities__list {
+        gap: 40px;
+    }
+
+    .getting__started__list {
+        gap: 48px;
+    }
+
+    .getting__started__action {
+        padding: 40px;
+        gap: 20px;
+    }
+
+    .getting__started__right h4 {
+        font-size: 22px;
+        line-height: 28px;
+    }
+
+    .getting__started__right p,
+    .getting__started__right a {
+        font-size: 18px;
+        line-height: 26px;
+    }
+
+    .getting__started__left img {
+        width: 48px;
+        height: 48px;
+    }
+}
+
+
+@media (max-width: 1224px) {
+    .main {
+        padding: 30px 80px 50px;
+    }
+
+    .community,
+    .people__platform {
+        gap: 20px;
+        padding: 10px;
+    }
+
+    .community {
+        align-items: center;
+    }
+
+    .people__platform {
+        align-items: flex-start;
+    }
+
+    .event__cards,
+    .event__cards__online {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 24px;
+    }
+
+    .event__card,
+    .event__card__online {
+        width: 240px;
+        height: 370px;
+    }
+
+    .event__image img,
+    .event__image__online img {
+        width: 240px;
+        height: 140px;
+    }
+
+    .join__Meetup {
+        align-items: center;
+        gap: 30px;
+        padding: 30px 40px;
+    }
+
+    .join__platform__title {
+        font-size: 24px;
+        line-height: 32px;
+        padding-top: 24px;
+        text-align: center;
+    }
+
+    .join__platform__text {
+        font-size: 15px;
+        line-height: 22px;
+        text-align: center;
+    }
+
+    .btn__join__platform {
+        width: 160px;
+        padding: 8px 40px;
+    }
+
+    .popular__cities__list {
+        gap: 70px;
+    }
+
+    .cities {
+        gap: 24px;
+    }
+
+    .getting__started__list {
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+    }
+
+    .getting__started__right {
+        gap: 20px;
+    }
+}
+
+
+@media (max-width: 991px) {
+    .main {
+        padding: 17px 40px 40px;
+    }
+
+    .community,
+    .people__platform {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        padding: 10px 0;
+        text-align: center;
+    }
+
+
+    .people__platform__text {
+        font-size: 20px;
+    }
+
+    .community img {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+    }
+
+    .event__cards,
+    .event__cards__online {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 20px;
+        justify-items: center;
+    }
+
+    .event__card,
+    .event__card__online {
+        width: 100%;
+        max-width: 220px;
+        height: auto;
+    }
+
+    .event__image img,
+    .event__image__online img {
+        width: 100%;
+        max-width: 220px;
+        height: auto;
+    }
+
+    .join__Meetup {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .join__platform {
+        align-items: center;
+    }
+
+    .join__platform__title {
+        font-size: 28px;
+        padding: 0 90px;
+    }
+
+    .join__platform__text {
+        font-size: 20px;
+        padding: 0 90px;
+    }
+
+    .btn__join__platform {
+        width: 140px;
+        padding: 6px 30px;
+        font-size: 14px;
+    }
+
+    .join__platform__img__media img {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+    }
+
+    .popular__cities__list {
+        padding: 6px;
+        gap: 25px;
+    }
+
+    .cities {
+        gap: 24px;
+    }
+
+    .getting__started__list {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .getting__started__action {
+        gap: 40px;
+    }
+
+    .getting__started__right {
+        gap: 24px;
+        padding-right: 10px;
+    }
+
+    .getting__started__right h4 {
+        font-size: 27px;
+    }
+
+    .getting__started__right p,
+    .getting__started__right a {
+        font-size: 16px;
+        line-height: 18px;
+    }
+
+    .friendships__oben {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .friendships__text {
+        padding-right: 0;
+    }
+}
+
+@media (max-width: 394px) {
+
+    .main {
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 0px 16px;
+
+    }
+
+    /* сommunity */
+    .community {
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 11px 20px 11px;
+        gap: 10px;
+    }
+
+    .people__platform {
+        width: 100%;
+        align-items: center;
+        gap: 20px;
+        padding: 0px;
+
+    }
+
+    .people__platform__title {
+        font-size: 25px;
+        line-height: 30px;
+        padding: 0px;
+    }
+
+    .people__platform__text {
+        font-size: 12px;
+        padding: 0px;
+    }
+
+    .btn__people__platform {
+        display: none;
+    }
+
+
+
+    /* EVENTS +ONLINE */
+
+    .nav__events__left,
+    .nav__events__left__online {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .nav__events h2,
+    .nav__events__left__online h2 {
+        font-size: 20px;
+        line-height: 24px;
+    }
+
+    .nav__events a,
+    .nav__events__online a {
+        display: none;
+    }
+
+    .nav__events__left__titele p {
+        width: 100%;
+        font-size: 13px;
+        line-height: 16px;
+    }
+
+    .nav__events__left__titele img {
+        right: -16px;
+        top: 8px;
+        width: 50%;
+        height: 50%;
+    }
+
+    .event__cards,
+    .event__cards__online {
+        display: none;
+    }
+
+
+    .cards__evets__adaptiv {
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-items: center;
+        gap: 20px;
+        padding-bottom: 50px;
+    }
+
+    .card__event__adaptiv {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        position: relative;
+    }
+
+    .card__event__adaptiv::before {
+        content: "";
+        position: absolute;
+        top: -12px;
+        left: 0%;
+        right: -0%;
+        height: 1px;
+        background-color: #D9D9D9;
+        margin: 0;
+    }
+
+    .card__event__adaptiv {
+        display: flex;
+        align-items: flex-start;
+        width: 100%;
+        gap: 7px;
+    }
+
+    .card__event__img__adaptiv img {
+        width: 97px;
+    }
+
+    .card__event__info__adaptiv {
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+        position: relative;
+    }
+
+
+    .cards__evets__adaptiv .card__event__adaptiv:nth-child(1) .card__event__info__adaptiv::before,
+    .cards__evets__adaptiv .card__event__adaptiv:nth-child(2) .card__event__info__adaptiv::before {
+        content: '';
+        position: absolute;
+        top: 43px;
+        left: -3px;
+        z-index: 10;
+        width: 64px;
+        height: 12px;
+        background-image: url('../images/icons/online_event.svg');
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .card__event__timing__adaptiv {
+        color: #7C6F50;
+        font-size: 8px;
+        font-weight: 500;
+        line-height: 12px;
+    }
+
+    .card__event__title__adaptiv {
+        color: #212121;
+        font-size: 9px;
+        font-weight: 500;
+        line-height: 14px;
+    }
+
+    .card__event__category__adaptiv {
+        color: #707070;
+        font-size: 8px;
+        font-weight: 400;
+        line-height: 12px;
+        padding-bottom: 27px;
+    }
+
+    .card__event__attendees__adaptiv {
+        color: #707070;
+        font-size: 8px;
+        font-weight: 400;
+        line-height: 12px;
+    }
+
+
+
+    /* join__Meetup */
+    .join__Meetup {
+        flex-direction: column;
+        padding: 24px 16px;
+        gap: 20px;
+    }
+
+    .join__Meetup .join__platform__img {
+        display: none;
+
+    }
+
+    .join__Meetup .join__platform__img__media {
+        display: block;
+        width: 100%;
+        max-width: 250px;
+        height: auto;
+        margin: 0 auto;
+        animation: handsBounce 3s ease-in-out infinite;
+
+    }
+
+    .join__platform__title {
+        font-size: 22px;
+        text-align: center;
+        padding: 0;
+        line-height: 1.3;
+    }
+
+    .join__platform__text {
+        font-size: 14px;
+        text-align: center;
+        padding: 0;
+        max-width: 100%;
+    }
+
+    .btn__join__platform {
+        margin: 0 auto;
+        width: 100%;
+        max-width: 192px;
+    }
+
+
+
+    /* Explore top categories */
+    .top__categories {
+        padding: 0px 11px;
+    }
+
+
+    .top__categories__title {
+        padding-top: 0px;
+        padding-bottom: 23px;
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 36px;
+        color: #212121;
+
+    }
+
+    .category__list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 11px;
+    }
+
+    .category {
+        text-align: center;
+        padding: 22px 27px 16px 27px;
+        border: none;
+        border-radius: 8px;
+        background: rgba(151, 202, 209, 0.08);
+    }
+
+    .category p {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 24px;
+        color: #212121;
+    }
+
+    /* Popular cities on Meetup */
+    .popular__cities {
+        padding: 0px 11px;
+    }
+
+    .popular__cities__title {
+        padding-top: 20px;
+        font-size: 20px;
+
+    }
+
+    .popular__cities__text {
+        font-size: 12px;
+        padding-bottom: 8px;
+
+    }
+
+    .popular__cities__list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: start;
+        gap: 17px;
+    }
+
+    .cities {
+        gap: 17px;
+    }
+
+    .cities img {
+        max-width: 100%;
+    }
+
+    .cities p {
+        font-size: 15px;
+        font-weight: 600;
+        line-height: 20px;
+        color: #212121;
+    }
+
+    .cities__media {
+        display: none;
+    }
+
+
+    /* How Meetup works */
+
+    .getting__started {
+        padding: 0px 11px;
+    }
+
+    .getting__started__title {
+        padding-top: 20px;
+        padding-bottom: 10px;
+        font-size: 20px;
+    }
+
+    .getting__started__list {
+        gap: 12px;
+    }
+
+    .getting__started__action {
+        gap: 12px;
+        padding: 19px 60px 14px 14px;
+        margin-top: 0px;
+        width: 100%;
+    }
+
+    .getting__started__left img {
+        width: 70%;
+        height: 70%;
+    }
+
+    .getting__started__right {
+        gap: 9px;
+        padding-right: 10px;
+    }
+
+    .getting__started__right h4 {
+        font-size: 12px;
+    }
+
+    .getting__started__right p {
+        font-size: 10px;
+        line-height: 14px;
+    }
+
+    .getting__started__right a {
+        font-size: 10px;
+    }
+
+    /* friendships */
+
+    .friendships {
+        padding: 0px 11px;
+    }
+
+    .friendships__title {
+        padding-top: 17px;
+        padding-bottom: 27px;
+        font-size: 20px;
+    }
+
+    .friendships__text {
+        display: none;
+    }
+
+    .friendships__list {
+
+        gap: 32px;
+    }
+
+    .friendships__item img {
+        max-width: 100%;
+    }
+
+    .friendships__item h4 {
+        font-size: 16px;
+        line-height: 26px;
+    }
+
+    .friendships__item p {
+        font-size: 12px;
+        padding-top: 11px;
+        padding-bottom: 15px;
+    }
+
+    .friendships__item a {
+        font-size: 12px;
+    }
+
+
+}

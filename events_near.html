@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+
+
+    <link rel="stylesheet" href="styles/style_2p.css">
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/footer.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="site-header"></div>
+
+    <main class="main">
+        <div class="left">
+
+            <div class="left__menu">
+                <h1>Events near New York, NY</h1>
+                <a href="#">Events</a>
+            </div>
+            <button class="filter-toggle-btn">
+                <span>🔍</span>Filters
+            </button>
+
+           
+            <div class="filters">
+
+                <div class="filter-group">
+                    <select id="typeFilter" class="filter-select">
+                        <option value="">Any type</option>
+                        <option value="online">Online</option>
+                        <option value="offline">Offline</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <select id="filterDistance" class="filter-select">
+                        <option value="">Any distance</option>
+                        <option value="10">10 km</option>
+                        <option value="25">25 km</option>
+                        <option value="50">50 km</option>
+                        <option value="100">100 km</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <select id="categoryFilter" class="filter-select">
+                        <option value="">Any category</option>
+                        <option value="Hobbies and Passions">Hobbies and Passions</option>
+                        <option value="Technology">Technology</option>
+                        <option value="Business">Business</option>
+                        <option value="Health and Wellbeing">Health and Wellbeing</option>
+                        <option value="Social Activities">Social Activities</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <select id="dateFilter" class="filter-select">
+                        <option value="">Any date</option>
+                        <option value="2024-03-13">Mar 13</option>
+                        <option value="2024-03-14">Mar 14</option>
+                        <option value="2024-03-16">Mar 16</option>
+                        <option value="2024-03-23">Mar 23</option>
+                        <option value="2024-03-30">Mar 30</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <div class="events-list" id="eventList"></div>
+
+        </div>
+
+        <!-- карта -->
+        <div class="right">
+            <p>Find events near</p>
+            <h2>New York, NY</h2>
+
+            <div id="map"></div>
+        </div>
+
+
+
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+        <script src="./script.js"></script>
+    </main>
+
+
+
+
+    <div id="site-footer"></div>
+
+</body>
+
+</html>

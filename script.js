@@ -1,6 +1,3 @@
-/**
- * 1. ХРАНИЛИЩЕ ДАННЫХ (EVENTS STORE)
- */
 const eventsStore = [
     {
         title: "INFJ Personality Type - Coffee Shop Meet & Greet",
@@ -62,9 +59,6 @@ const eventsStore = [
     },
 ];
 
-/**
- * 2. КЛАСС ФИЛЬТРАЦИИ СОБЫТИЙ
- */
 class EventFilter {
     constructor() {
         this.events = [...eventsStore];
@@ -101,7 +95,6 @@ class EventFilter {
             const distanceMatch = !this.filters.distance || event.distance <= parseInt(this.filters.distance);
             const categoryMatch = !this.filters.category || event.category === this.filters.category;
             
-            // Безопасное сравнение дат
             const eventDateStr = event.date instanceof Date ? event.date.toISOString().slice(0, 10) : "";
             const dateMatch = !this.filters.date || eventDateStr === this.filters.date;
             
@@ -138,9 +131,6 @@ class EventFilter {
     }
 }
 
-/**
- * 3. ФУНКЦИЯ ЗАГРУЗКИ КОМПОНЕНТОВ (HEADER/FOOTER)
- */
 async function includeHTML(selector, url) {
     try {
         const resp = await fetch(url);
@@ -155,18 +145,12 @@ async function includeHTML(selector, url) {
     }
 }
 
-/**
- * 4. ИНИЦИАЛИЗАЦИЯ ПРИ ЗАГРУЗКЕ СТРАНИЦЫ
- */
 document.addEventListener("DOMContentLoaded", () => {
-    // Загружаем компоненты
     includeHTML('#site-header', './components/header.html');
     includeHTML('#site-footer', './components/footer.html');
 
-    // Запускаем фильтр
     new EventFilter();
 
-    // Карта (Leaflet)
     const mapContainer = document.getElementById('map');
     if (mapContainer) {
         const map = L.map('map').setView([40.7128, -74.0060], 12);
@@ -186,9 +170,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
-/**
- * 5. ОБРАБОТЧИКИ СОБЫТИЙ (SCROLL, CLICKS)
- */
 window.addEventListener('scroll', () => {
     const header = document.querySelector('.navbar');
     if (header) {
